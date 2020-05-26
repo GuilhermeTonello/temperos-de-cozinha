@@ -1,0 +1,22 @@
+.pesquisa_campo {
+	border-radius: 15px;
+}
+
+.cor_texto {
+	color: #fff;
+	transition: 0.2s;
+}
+
+.cor_texto:hover {
+	color: #ff5c33;
+}
+
+.receita_link {
+	color: black;
+	transition: 0.2s;
+	text-decoration: none;
+}
+
+.receita_link:hover {
+	color: #ff5c33;
+}
