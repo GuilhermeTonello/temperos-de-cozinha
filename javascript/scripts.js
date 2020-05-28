@@ -5,7 +5,9 @@ function getUrlParameter(parameterName) {
 
 //função para gerar pratos na pesquisa.html
 function gerarPratos(prato) {
-	fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + prato).then(resposta => resposta.json())
+	fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + prato).then(resposta => {
+		return resposta.json();
+	})
 	.then(tela => {
 		const lista = document.querySelector(".js-table");
 		for (let i = 0; i < tela.meals.length; i++) {
@@ -53,11 +55,8 @@ function gerarPratosAleatorios() {
 			let p = tela.meals[0];
 			receita.insertAdjacentHTML("beforeend", `
 				<a href="receita.html?prato=${p.idMeal}" class="receita_link">
-					<div class=\"mt-3 mb-3\" style=\"border: 1px solid black;\">
-					<img style="width: 50%;" src="${p.strMealThumb}" alt="prato foto" title="prato foto">
-					<br />
-					<p>Nome: ${p.strMeal}</p>
-					<p>Categoria: ${p.strCategory}</p>
+					<div class=\"mt-3 mb-3\">
+						<img style="width: 100%;" src="${p.strMealThumb}" alt="prato foto" title="prato foto">
 					</div>
 				</a>
 			`);
@@ -71,7 +70,8 @@ window.addEventListener("load", evento => {
 	if (url.indexOf("index.html") > -1) { //se carregar index.html
 		gerarPratosAleatorios();
 	} else if (url.indexOf("pesquisa.html") > -1) { //se carregar pesquisa.html
-		gerarPratos(getUrlParameter("prato"));
+		if (getUrlParameter("prato") != null && getUrlParameter("prato") != "")
+			gerarPratos(getUrlParameter("prato"));
 	} else if (url.indexOf("receita.html") > -1) { //se carregar receita.html
 		if (getUrlParameter("prato") != null && getUrlParameter("prato") != "") {
 			gerarReceita(getUrlParameter("prato"));
