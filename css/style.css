@@ -1,0 +1,68 @@
+body {
+	background-color: rgb(253, 253, 253);
+}
+
+nav#nav_bar {
+	background-color: rgb(239,102,47);
+}
+
+.pesquisa_campo {
+	border-radius: 10px;
+	height: 2.3em;
+}
+
+.logo {
+	width: 15%;
+}
+
+.pesquisa_botao {
+	background-color: #f2f2f2;
+	border: 1px solid #d96b3f;
+	transition: 0.3s;
+}
+
+.pesquisa_botao:hover {
+	background-color: #cccccc;
+}
+
+.cor_texto {
+	color: #fff;
+	transition: 0.2s;
+}
+
+.cor_texto:hover {
+	color: rgb(48, 16, 3);
+}
+
+.img_principal {
+	width: 100%;
+	max-width: 100%;
+	object-fit: cover;
+	height: 400px;
+}
+
+#img_principal_div {
+	margin-top: 14vh;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	#img_principal_div {
+		margin-top: 7vh;
+	}
+}
+
+footer {
+	font-size: 18px;
+	background-color: rgb(239,102,47);
+	text-align: center;
+}
+
+footer div p {
+	color: white;
+	transition: 0.2s;
+}
+
+footer div p:hover {
+	cursor: pointer;
+	color: rgb(48, 16, 3);
+}

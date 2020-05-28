@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Temperos de Cozinha</title>
+		<meta name="description" content="receitas, pesquisar, pesquisar receitas, lista de receitas">
+		<meta name="robots" content="index,follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="canonical" href="https://tonello.tk/testes-api/pesquisa-receita/index.html">
+		<link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/receita.css">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg pt-4 pb-4 fixed-top" id="nav_bar">
+				<div class="container">
+					<a class="navbar-brand text-uppercase cor_texto" href="index.html">home</a>
+					<img class="logo" src="img/logo.png">
+					<div>
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<form action="pesquisa.html" class="js-form">
+									<input placeholder="Encontre uma receita..." name="prato" type="text" class="pesquisa_campo bg-light">
+									<button type="submit" class="pesquisa_botao btn">Pesquisar</button>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<main class="container">
+			<section class="row" id="informacoes">
+				<div id="img_prato" class="col-4"></div>
+				<div class="col-8">
+					<h2 class="nome_prato">HAMBURGUER COM QUEIJO MINAS E PICLES</h2>
+					<h4>Ingredientes:</h4>
+					<ul id="ingredientes">
+						<li>1 pão redondo do tamanho do hambúrguer;</li>
+						<li>500 gramas de fraldinha moída;</li>
+						<li>200 gramas de acém moído;</li>
+						<li>1 gema de ovo;</li>
+						<li>2 colheres de sobremesa de mostarda Dijon;</li>
+						<li>1 xícara de manteiga;</li>
+						<li>1 ramo de tomilho;</li>
+						<li>1 cebola roxa;</li>
+						<li>2 tomates;</li>
+						<li>1 chuchu;</li>
+						<li>300ml de base de picles;</li>
+						<li>Sal e azeite a gosto;</li>
+					</ul>
+				</div>
+			</section>
+			<section class="row">
+				<h2 id="modo_de_preparo">MODO DE PREPARO:</h2>
+				<ol id="preparo" class="circle">
+					<li>Corte a cebola em fatias finas, o chuchu em rodelas finas e os tomates em rodelas mais grossas. Leve tudo para a brasa numa assadeira e toste os dois lados.</li>
+					<li>Coloque a manteiga para derreter, queime levemente um ramo de tomilho e coloque dentro para perfumar. Reserve e deixe esfriar.</li>
+					<li>Coloque o chuchu e a cebola roxa na base de picles e reserve.</li>
+					<li>Monte a maionese à mão ou com um liquidificador emulsionando a gema com a mostarda, suco de limão, sal e a manteiga.</li>
+				</ol>
+			</section>
+		</main>
+		<footer>
+			<div class="mt-4 pt-4 pb-2">
+				<p>Temperos de Cozinha | Copyright 2020</p>
+			</div>
+		</footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="javascript/scripts.js"></script>
+	</body>
+</html>
