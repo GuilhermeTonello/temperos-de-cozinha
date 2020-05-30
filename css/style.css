@@ -66,3 +66,40 @@ footer div p:hover {
 	cursor: pointer;
 	color: rgb(48, 16, 3);
 }
+
+#informacoes {
+    margin-top: 200px;
+    padding-bottom: 30px;
+}
+
+#modo_de_preparo {
+    padding: 20px;
+}
+
+#preparo li{
+    text-align: justify;
+    padding: 5px;
+}
+
+
+/* https://clickhelp.com/clickhelp-technical-writing-blog/advanced-autonumbering-techniques-with-css/ */
+ol.circle {
+    list-style: none;
+    counter-reset: item;
+  }
+ 
+  ol.circle > li{
+    counter-increment: item;
+    margin-bottom: 5px;
+  }
+ 
+ ol.circle > li:before {
+    margin-right: 10px;
+    content: counter(item);
+    background: #FF8A65;
+    border-radius: 100%;
+    color: white;
+    width: 1.5em;
+    text-align: center;
+    display: inline-block;
+  }

@@ -33,21 +33,45 @@ function gerarReceita(prato) {
 	fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + prato).then(resposta => {
 		return resposta.json();
 	}).then(tela => {
-		const receita = document.querySelector(".js-receita");
+		const foto = document.querySelector("#img_prato");
+		const nome = document.querySelector(".nome_prato");
+		const ingredientes = document.querySelector("#ingredientes");
+		const preparo = document.querySelector("#preparo");
 		let p = tela.meals[0];
-		receita.insertAdjacentHTML("beforeend", `
-			<div class="container mt-5" style="border: 3px solid black;">
-				<p>Nome: ${p.strMeal}</p>
-				<p>Categoria: ${p.strCategory}</p>
-				<p>ID: ${p.idMeal}</p>
-			</div>
+		foto.insertAdjacentHTML("beforeend", `
+			<img style="width: 100%;" src="${p.strMealThumb}">
 		`);
+		
+		nome.innerHTML = p.strMeal;
+		
+		let quantidadeIngredientes = 0;
+		let ingredientesArray = [p.strIngredient1, p.strIngredient2, p.strIngredient3, p.strIngredient4, p.strIngredient5,
+								p.strIngredient6, p.strIngredient7, p.strIngredient8, p.strIngredient9, p.strIngredient10,
+								p.strIngredient11, p.strIngredient12, p.strIngredient13, p.strIngredient14, p.strIngredient15,
+								p.strIngredient16, p.strIngredient17, p.strIngredient18, p.strIngredient19, p.strIngredient20];
+		let ingredientesMedidas = [p.strMeasure1, p.strMeasure2, p.strMeasure3, p.strMeasure4, p.strMeasure5,
+								p.strMeasure6, p.strMeasure7, p.strMeasure8, p.strMeasure9, p.strMeasure10,
+								p.strMeasure11, p.strMeasure12, p.strMeasure13, p.strMeasure14, p.strMeasure15,
+								p.strMeasure16, p.strMeasure17, p.strMeasure18, p.strMeasure19, p.strMeasure20];
+		while(ingredientesArray[quantidadeIngredientes] != null && ingredientesArray[quantidadeIngredientes] != "" && ingredientesMedidas[quantidadeIngredientes] != 0 && ingredientesMedidas[quantidadeIngredientes] != "") {
+			ingredientes.insertAdjacentHTML("beforeend", `
+				<li>${ingredientesMedidas[quantidadeIngredientes]} - ${ingredientesArray[quantidadeIngredientes]}</li>
+			`);
+			quantidadeIngredientes++;
+		}
+		
+		let instrucoes = p.strInstructions.split("\r\n");
+		for (let i = 0; i < instrucoes.length; i++) {
+			preparo.insertAdjacentHTML("beforeend", `
+				<li>${instrucoes[i]}</li>
+			`);
+		}
 	});
 }
 
-//função para gerar 4 pratos aleatórios em index.html
+//função para gerar 3 pratos aleatórios em index.html
 function gerarPratosAleatorios() {
-	for (let i = 1; i <= 4; i++) {
+	for (let i = 1; i <= 3; i++) {
 		fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(resposta => {
 			return resposta.json();
 		}).then(tela => {
