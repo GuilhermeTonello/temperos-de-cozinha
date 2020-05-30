@@ -33,6 +33,9 @@ function gerarReceita(prato) {
 	fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + prato).then(resposta => {
 		return resposta.json();
 	}).then(tela => {
+		document.querySelector("#modo_de_preparo").innerHTML = "MODO DE PREPARO:";
+		document.querySelector(".ingredientes").innerHTML = "Ingredientes:";
+		
 		const foto = document.querySelector("#img_prato");
 		const nome = document.querySelector(".nome_prato");
 		const ingredientes = document.querySelector("#ingredientes");
@@ -100,7 +103,7 @@ window.addEventListener("load", evento => {
 		if (getUrlParameter("prato") != null && getUrlParameter("prato") != "") {
 			gerarReceita(getUrlParameter("prato"));
 		} else {
-			document.querySelector(".js-receita").insertAdjacentHTML("beforeend", '<div class="mt-3 mb-3 text-center"><p>Receita não encontrada!</p></div>');
+			document.querySelector("main.container").insertAdjacentHTML("beforeend", '<div class="mb-5 text-center"><p>Receita não encontrada!</p></div>');
 		}
 	}
 });
