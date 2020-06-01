@@ -6,6 +6,16 @@ nav#nav_bar {
 	background-color: rgb(239,102,47);
 }
 
+a.receita_link {
+	text-decoration: none;
+	color: #404040;
+	transition: 0.2s;
+}
+
+a.receita_link:hover {
+	color: #e65c00;
+}
+
 .pesquisa_campo {
 	border-radius: 10px;
 	height: 2.3em;
@@ -57,12 +67,12 @@ footer {
 	text-align: center;
 }
 
-footer div p {
+footer p {
 	color: white;
 	transition: 0.2s;
 }
 
-footer div p:hover {
+footer p:hover {
 	cursor: pointer;
 	color: rgb(48, 16, 3);
 }

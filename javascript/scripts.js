@@ -12,13 +12,31 @@ function gerarPratos(prato) {
 		const lista = document.querySelector(".js-table");
 		for (let i = 0; i < tela.meals.length; i++) {
 			let p = tela.meals[i];
+			let descricao = p.strInstructions.substring(0, 300) + "...";
 			lista.insertAdjacentHTML("beforeend", `
-				<tr>
+				<tr style="background-color: white;">
 					<td>
 						<a href="receita.html?prato=${p.idMeal}" class="receita_link">
-							<div class="container mt-5" style="border: 3px solid black;">
-								<p>Nome: ${p.strMeal}</p>
-								<p>Categoria: ${p.strCategory}</p>
+							<div class="container mt-5">
+								<div class="row">
+									<div class="col-12 col-sm-4" style="text-align: center;">
+										<img src="${p.strMealThumb}" width="100%" title="${p.strMeal}" alt="${p.strMeal}">
+									</div>
+									<div class="col-8 d-none d-sm-block">
+										<p style="font-size: 1.5em;">${p.strMeal}</p>
+										<p>Categoria: ${p.strCategory}</p>
+										<p>${descricao}</p>
+									</div>
+									<div class="col-12 d-block d-sm-none" style="text-align: center;">
+										<p style="font-size: 1.5em;">${p.strMeal}</p>
+									</div>
+									<div class="col-12 d-block d-sm-none" style="text-align: center;">
+										<p>Categoria: ${p.strCategory}</p>
+									</div>
+									<div class="col-12 d-block d-sm-none" style="text-align: center;">
+										<p>${descricao}</p>
+									</div>
+								</div>
 							</div>
 						</a>
 					</td>
@@ -42,7 +60,7 @@ function gerarReceita(prato) {
 		const preparo = document.querySelector("#preparo");
 		let p = tela.meals[0];
 		foto.insertAdjacentHTML("beforeend", `
-			<img style="width: 100%;" src="${p.strMealThumb}">
+			<img style="width: 100%;" src="${p.strMealThumb}" title="${p.strMeal}" alt="${p.strMeal}">
 		`);
 		
 		nome.innerHTML = p.strMeal;
@@ -83,7 +101,7 @@ function gerarPratosAleatorios() {
 			receita.insertAdjacentHTML("beforeend", `
 				<a href="receita.html?prato=${p.idMeal}" class="receita_link">
 					<div class=\"mt-3 mb-3\">
-						<img style="width: 100%;" src="${p.strMealThumb}" alt="prato foto" title="prato foto">
+						<img style="width: 100%;" src="${p.strMealThumb}" title="${p.strMeal}" alt="${p.strMeal}">
 					</div>
 				</a>
 			`);
