@@ -1,0 +1,115 @@
+body {
+	background-color: rgb(253, 253, 253);
+}
+
+nav#nav_bar {
+	background-color: rgb(239,102,47);
+}
+
+a.receita_link {
+	text-decoration: none;
+	color: #404040;
+	transition: 0.2s;
+}
+
+a.receita_link:hover {
+	color: #e65c00;
+}
+
+.pesquisa_campo {
+	border-radius: 10px;
+	height: 2.3em;
+}
+
+.logo {
+	width: 15%;
+}
+
+.pesquisa_botao {
+	background-color: #f2f2f2;
+	border: 1px solid #d96b3f;
+	transition: 0.3s;
+}
+
+.pesquisa_botao:hover {
+	background-color: #cccccc;
+}
+
+.cor_texto {
+	color: #fff;
+	transition: 0.2s;
+}
+
+.cor_texto:hover {
+	color: rgb(48, 16, 3);
+}
+
+.img_principal {
+	width: 100%;
+	max-width: 100%;
+	object-fit: cover;
+	height: 400px;
+}
+
+#img_principal_div {
+	margin-top: 14vh;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	#img_principal_div {
+		margin-top: 7vh;
+	}
+}
+
+footer {
+	font-size: 18px;
+	background-color: rgb(239,102,47);
+	text-align: center;
+}
+
+footer p {
+	color: white;
+	transition: 0.2s;
+}
+
+footer p:hover {
+	cursor: pointer;
+	color: rgb(48, 16, 3);
+}
+
+#informacoes {
+    margin-top: 200px;
+    padding-bottom: 30px;
+}
+
+#modo_de_preparo {
+    padding: 20px;
+}
+
+#preparo li{
+    text-align: justify;
+    padding: 5px;
+}
+
+
+/* https://clickhelp.com/clickhelp-technical-writing-blog/advanced-autonumbering-techniques-with-css/ */
+ol.circle {
+    list-style: none;
+    counter-reset: item;
+  }
+ 
+  ol.circle > li{
+    counter-increment: item;
+    margin-bottom: 5px;
+  }
+ 
+ ol.circle > li:before {
+    margin-right: 10px;
+    content: counter(item);
+    background: #FF8A65;
+    border-radius: 100%;
+    color: white;
+    width: 1.5em;
+    text-align: center;
+    display: inline-block;
+  }
