@@ -112,7 +112,7 @@ function gerarPratosAleatorios() {
 //quando a janela carregar
 window.addEventListener("load", evento => {
 	let url = location.pathname;
-	if (url.indexOf("index.html") > -1) { //se carregar index.html
+	if (url.indexOf("index.html") > -1 || location == "https://temperosdecozinha.netlify.app/") { //se carregar index.html
 		gerarPratosAleatorios();
 	} else if (url.indexOf("pesquisa.html") > -1) { //se carregar pesquisa.html
 		if (getUrlParameter("prato") != null && getUrlParameter("prato") != "")
